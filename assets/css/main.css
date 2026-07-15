@@ -550,16 +550,21 @@ section,
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
-.hero img {
+.hero-image-wrapper {
   position: absolute;
   inset: 0;
+  z-index: 1;
+}
+
+.hero-image-wrapper img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 1;
+  object-position: center;
 }
 
 .hero:before {
@@ -573,6 +578,22 @@ section,
 .hero .container {
   position: relative;
   z-index: 3;
+}
+
+.hero .caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 12px 20px;
+  text-align: center;
+  color: white;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+  z-index: 4;
+}
+
+.hero .caption p {
+  margin: 0;
 }
 
 .hero h2 {
